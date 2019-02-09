@@ -1,6 +1,5 @@
 const height = 10, width = 40;
 let board;
-let Life;
 
 function NewBoard(){
   board=[];
