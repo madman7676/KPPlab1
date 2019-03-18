@@ -41,10 +41,13 @@ function LifeCucle(board){
 }
 
 function Neighbors(board,i,j){
-  if(i<=0||j<=0||i>=height-1||j>=width-1) {return 0;}
-  return board[i-1][j-1] + board[i-1][j] + board[i-1][j+1] +
-         board[i]  [j-1] + 0             + board[i]  [j+1] +
-         board[i+1][j-1] + board[i+1][j] + board[i+1][j+1];
+  return test(board,i-1,j-1) + test(board,i-1,j) + test(board,i-1,j+1) +
+         test(board,i,j-1)   +                   + test(board,i,j+1)   +
+         test(board,i+1,j-1) + test(board,i+1,j) + test(board,i+1,j+1);
+}
+
+function test(board,i,j){
+  if(i<=0||j<=0||i>=height||j>=width) {return 0;}
 }
 
 board=NewBoard(board);
